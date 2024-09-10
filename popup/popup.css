@@ -1,0 +1,13 @@
+img {
+  width: 50px;
+}
+
+body {
+  height: 400px;
+  width: 300px;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+}
