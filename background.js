@@ -4,13 +4,13 @@ chrome.alarms.create("Pomodoro Timer", {
 
 chrome.alarms.onAlarm.addListener((alarm) => {
   if (alarm.name === "Pomodoro Timer") {
-    chrome.storage.local.get(["timer", "isRunning"], (res) => {
+    chrome.storage.local.get(["timer", "isRunning", "timeOption"], (res) => {
       if (res.isRunning) {
         let timer = res.timer + 1;
         let isRunning = true;
-        if (timer === 25 * 60) {
+        if (timer === 60 * res.timeOption) {
           this.registration.showNotification("Time's Up Note", {
-            body: "25 minutes is passed!",
+            body: `${res.timeOption} minutes is passed!`,
             icon: "icon.png",
           });
 
@@ -26,9 +26,10 @@ chrome.alarms.onAlarm.addListener((alarm) => {
   }
 });
 
-chrome.storage.local.get(["timer", "isRunning"], (res) => {
+chrome.storage.local.get(["timer", "isRunning", "timeOption"], (res) => {
   chrome.storage.local.set({
     timer: "timer" in res ? res.timer : 0,
+    timeOption: "timeOption" in res ? res.timeOption : 25,
     isRunning: "isRunning" in res ? res.isRunning : false,
   });
 });
