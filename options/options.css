@@ -1,3 +1,46 @@
 img {
   width: 100px;
+  background-color: whitesmoke;
+  align-content: center;
+}
+
+body {
+  background-color: rgb(200, 115, 115);
+}
+
+h1 {
+  color: whitesmoke;
+  text-align: center;
+  font-size: 50px;
+  margin: 10px;
+  font-weight: normal;
+}
+
+h2 {
+  font-weight: normal;
+  color: whitesmoke;
+}
+
+#save-btn {
+  outline: none;
+  border: none;
+  height: 35px;
+  width: 100px;
+  border-radius: 4px;
+  color: indianred;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+#save-btn:hover {
+  background-color: white;
+  color: rgb(240, 89, 89);
+}
+
+#time-option {
+  outline: none;
+  border: none;
+  width: 300px;
+  border-radius: 4px;
+  padding: 10px;
 }
